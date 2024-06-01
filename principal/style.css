@@ -293,30 +293,40 @@ h2{
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra las películas horizontalmente */
 }
 
-.carousel-track img {
-    width: 200px; /* Ajusta según tu diseño */
-    margin: 0 10px;
+.carousel-item {
+    position: relative;
 }
 
-button {
+.carousel-item img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+.carousel-item p {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 5px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
+    backdrop-filter: blur(5px);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+.carousel-item:hover p {
+    opacity: 1;
 }
